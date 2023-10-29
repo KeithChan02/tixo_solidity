@@ -74,7 +74,7 @@ To deploy this contract, specify the `eventStartTime` during the contract creati
 
 ### Deployment Script
 
-- [`concertDeploy.ts`](tixo_solidity/scripts/concertDeploy.ts): This is a TypeScript file that handles the deployment of the `ContractTicket` smart contract.
+- [`concertDeploy.ts`](scripts/concertDeploy.ts): This is a TypeScript file that handles the deployment of the `ContractTicket` smart contract.
 
 ## Disclaimer
 
