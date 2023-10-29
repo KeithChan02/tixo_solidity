@@ -1,57 +1,81 @@
-# Flare Hardhat Starter Kit
+# ConcertTicket Smart Contract
 
-## Getting started
+## Description
+This Ethereum smart contract, named `ConcertTicket`, is designed to handle the management and operations related to concert tickets, merchandise sales, event creation, and donations to event organizers. 
 
-If you are new to hardhat please checkout [hardhat getting started doc](https://hardhat.org/hardhat-runner/docs/getting-started#overview)
+## React Frontend
 
-### Clone and install dependencies:
+For a React-based frontend implementation of this smart contract, check out the [tixo_react repository](https://github.com/KeithChan02/tixo_react).
 
-```
-git clone https://github.com/flare-foundation/flare-hardhat-starter.git
-cd flare-hardhat-starter
-```
-then run:
+## Features
 
+- Price conversion between USD and FLR (or other cryptocurrencies).
+- Buy and refund tickets.
+- Merchandise addition, display, and purchase.
+- Donations to event organizers. (WIP)
+- Event details management including ticket availability.
+- Unique token generation for ticket holders.
+- Organizer following system for users.
 
-```
-yarn
-```
-or 
-```
-npm install
-```
+## Prerequisites
 
+To interact with this contract, the following interfaces and libraries from FlareNetwork are required:
 
-**Now Make sure to first copy .env.example into .env and set your private key**
+- `IFtsoRegistry` from "@flarenetwork/flare-periphery-contracts/coston2/ftso/userInterfaces/IFtsoRegistry.sol".
+- `FlareContractsRegistryLibrary` from "@flarenetwork/flare-periphery-contracts/coston2/util-contracts/ContractRegistryLibrary.sol".
 
-Now you can compile
+## Functions
 
-```
-yarn hardhat compile
-or 
-npx hardhat compile
-```
+### Event Management
 
-This will compile all .sol files in your /contracts folder. It will also generate artifacts, that will be needed for testing. Contracts Imports.sol imports MockContracts and flare related mocks thus enabling mocking the contracts from typescript.
+- `setEventDetails`: Set the details of an event.
+- `checkEventDetails`: View the details of an event based on ticket ID.
+  
+### Ticket Management
 
-Run Tests
-```
-yarn hardhat test
-or 
-npx hardhat test
-```
+- `buyTicket`: Purchase a ticket for a specific event.
+- `ticketsAvailable`: Check the number of available tickets for an event.
+- `refundTicket`: Refund a ticket before the refund window closes.
+- `generateUniqueToken`: Generate a unique token for a ticket holder.
+- `isValidToken`: Validate a user's ticket token.
+  
+### Merchandise Management
 
-& Deploy
+- `addMerchandise`: Add a new merchandise item.
+- `purchaseMerchandise`: Purchase a specified quantity of a merchandise item.
+  
+### Donation Management (WIP)
 
-Checkout the ```hardhat.config.ts``` file where you define which networks you want to interact with. Flare mainnet & test networks details are already added in that file!
+- `donateToOrganizer`: Donate an amount to the event organizer.
+  
+### Organizer Management
 
-Again make sure that you have added API Keys in .env file
+- `followOrganizer`: Follow a specific organizer.
+- `unfollowOrganizer`: Unfollow a specific organizer.
 
-```
-npx hardhat run scripts/tryDeployment.ts
-```
+## Events
 
-Thank You!
-### Resources:
-- [Flare Dev Docs](https://docs.flare.network/dev/)
-- [Hardhat Docs](https://hardhat.org/docs)
+- `UniqueTokenGenerated`: Emitted when a unique token for a ticket is generated.
+- `MerchandiseAdded`: Emitted when a new merchandise item is added.
+- `MerchandisePurchased`: Emitted when merchandise is purchased.
+- `TicketPurchased`: Emitted when a ticket is purchased.
+- `DonationMade`: Emitted when a donation is made to an event organizer.
+- `FollowedOrganizer`: Emitted when an organizer is followed.
+- `UnfollowedOrganizer`: Emitted when an organizer is unfollowed.
+- `NewEventNotified`: Emitted when a new event is notified.
+
+## Modifiers
+
+- `onlyOwner`: Ensures only the contract owner can call the marked function.
+
+## Deployment
+
+To deploy this contract, specify the `eventStartTime` during the contract creation.
+
+## Disclaimer
+
+Ensure to conduct proper security audits before deploying this contract in a production environment.
+
+## License
+
+This project is licensed under the MIT License.
