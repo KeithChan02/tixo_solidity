@@ -69,8 +69,11 @@ To interact with this contract, the following interfaces and libraries from Flar
 - `onlyOwner`: Ensures only the contract owner can call the marked function.
 
 ## Deployment
+### Script
 
 [`concertDeploy.ts`](scripts/concertDeploy.ts): This is a TypeScript file that handles the deployment of the `ContractTicket` smart contract.
+
+### Procedure
 
 To deploy this contract, specify the following during the contract creation:
 - `name`: Event Name, e.g. `"Concert"`
