@@ -3,6 +3,10 @@
 ## Description
 This Ethereum smart contract, named `ConcertTicket`, is designed to handle the management and operations related to concert tickets, merchandise sales, event creation, and donations to event organizers. 
 
+### Smart Contract
+
+- [`ContractTicket.sol`](contracts/ContractTicket.sol): This is the primary smart contract written in Solidity that contains the logic for managing event tickets.
+
 ## React Frontend
 
 For a React-based frontend implementation of this smart contract, check out the [tixo_react repository](https://github.com/KeithChan02/tixo_react).
@@ -73,7 +77,7 @@ To interact with this contract, the following interfaces and libraries from Flar
 
 [`concertDeploy.ts`](scripts/concertDeploy.ts): This is a TypeScript file that handles the deployment of the `ContractTicket` smart contract.
 
-### Procedure
+### Parameters
 
 To deploy this contract, specify the following during the contract creation:
 - `name`: Event Name, e.g. `"Concert"`
@@ -83,11 +87,6 @@ To deploy this contract, specify the following during the contract creation:
 - `endTime`: End Time, e.g. `1701183600`
 - `totalTickets`: Total Number of Tickets Available, e.g. `1000`
 - `ticketsSold`: Total Number of Tickets Sold, e.g. `0`
-
-### Smart Contract
-
-- [`ContractTicket.sol`](contracts/ContractTicket.sol): This is the primary smart contract written in Solidity that contains the logic for managing event tickets.
-
 
 ## Disclaimer
 
