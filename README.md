@@ -70,11 +70,21 @@ To interact with this contract, the following interfaces and libraries from Flar
 
 ## Deployment
 
-To deploy this contract, specify the `eventStartTime` during the contract creation.
+[`concertDeploy.ts`](scripts/concertDeploy.ts): This is a TypeScript file that handles the deployment of the `ContractTicket` smart contract.
 
-### Deployment Script
+To deploy this contract, specify the following during the contract creation:
+- `name`: Event Name, e.g. `"Concert"`
+- `location`: Location Name, e.g. `"London"`
+- `description`: Description, e.g. `"A concert"`
+- `startTime`: Start Time, e.g. `1701169200`
+- `endTime`: End Time, e.g. `1701183600`
+- `totalTickets`: Total Number of Tickets Available, e.g. `1000`
+- `ticketsSold`: Total Number of Tickets Sold, e.g. `0`
 
-- [`concertDeploy.ts`](scripts/concertDeploy.ts): This is a TypeScript file that handles the deployment of the `ContractTicket` smart contract.
+### Smart Contract
+
+- [`ContractTicket.sol`](contracts/ContractTicket.sol): This is the primary smart contract written in Solidity that contains the logic for managing event tickets.
+
 
 ## Disclaimer
 
