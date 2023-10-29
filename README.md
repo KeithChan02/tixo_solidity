@@ -72,6 +72,10 @@ To interact with this contract, the following interfaces and libraries from Flar
 
 To deploy this contract, specify the `eventStartTime` during the contract creation.
 
+### Deployment Script
+
+- [`concertDeploy.ts`](tixo_solidity/scripts/concertDeploy.ts): This is a TypeScript file that handles the deployment of the `ContractTicket` smart contract.
+
 ## Disclaimer
 
 Ensure to conduct proper security audits before deploying this contract in a production environment.
